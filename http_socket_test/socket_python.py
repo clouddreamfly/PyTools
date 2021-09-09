@@ -19,8 +19,8 @@ def SocketConnect(addr = ('127.0.0.1', 8080),  write_content = False):
         #sock.shutdown(socket.SHUT_RDWR)
         sock.close()
 
-    except:
-        print('error')
+    except socket.error, e :
+        print('error', e)
         #sock.shutdown(socket.SHUT_RDWR)
         sock.close()        
         return False
@@ -44,13 +44,13 @@ class SocketConnectThread(threading.Thread):
     
     def run(self):
         
-        print u"线程ID:%d, 线程名称：%s, 已经启动！"%(self._thread_id, self._thread_name)   
+        #print u"线程ID:%d, 线程名称：%s, 已经启动！"%(self._thread_id, self._thread_name)   
         
         # 下载处理
         while True:
             self.ConnectThread()
             
-        print u"线程ID:%d, 线程名称：%s, 即将结束！"%(self._thread_id, self._thread_name)   
+        #print u"线程ID:%d, 线程名称：%s, 即将结束！"%(self._thread_id, self._thread_name)   
     
     
     def ConnectThread(self):
@@ -58,11 +58,11 @@ class SocketConnectThread(threading.Thread):
         result = SocketConnect(self._addr, self._write_content)
         if result == True:
             self._connect_count += 1
-            print u"链接成功, 线程ID:%d, 次数：%d"%(self._thread_id, self._connect_count)  
-            time.sleep(0.05)
+            #print u"链接成功, 线程ID:%d, 次数：%d"%(self._thread_id, self._connect_count)  
+            #time.sleep(0.005)
         else:
-            print u"链接失败, 线程ID:%d"%(self._thread_id) 
-            time.sleep(1)
+            print u"链接失败, 线程ID:%d.........."%(self._thread_id) 
+            time.sleep(0.01)
 
         
         
