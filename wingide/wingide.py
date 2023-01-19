@@ -22,12 +22,13 @@ else:
 BASE16 = '0123456789ABCDEF'
 BASE30 = '123456789ABCDEFGHJKLMNPQRTVWXY'
 
-g_version_list = ('8.X.X', '7.X.X', '6.X.X', '5.X.X')
+g_version_list = ('9.X.X', '8.X.X', '7.X.X', '6.X.X', '5.X.X')
 g_version_magics = {
     '5.X.X': [7, 123, 23, 87],
     '6.X.X': [23, 161, 47, 9],
     '7.X.X': [221, 13, 93, 27],
     '8.X.X': [179, 95, 45, 245],
+    '9.X.X': [123, 17, 42, 7]
 }
 
 def RandomString(size=20, chars=string.ascii_uppercase + string.digits):
