@@ -138,7 +138,7 @@ class Application(Frame):
         cen_y = (scn_h - win_h) / 2
         
         self.master = master
-        self.master.title('WingIDE Pro Genkey (5, 6, 7, 8)')
+        self.master.title('WingIDE Pro Genkey (5, 6, 7, 8, 9)')
         self.master.resizable(False, False) 
         self.master.geometry('%dx%d+%d+%d'%(win_w, win_h, cen_x, cen_y))
         self.create_widgets()
@@ -162,7 +162,7 @@ class Application(Frame):
         self.l1 = Label(self.master, text='LicenseID:')
         self.l1.grid(padx=5, pady=5, row=current_row, column=current_col, sticky=E)
         self.LicID = StringVar()
-        self.LicEntry = Entry(self.master, textvariable=self.LicID, width=30, state='readonly')
+        self.LicEntry = Entry(self.master, textvariable=self.LicID, width=30)
         self.LicEntry.grid(padx=5, pady=5, row=current_row, column=current_col + 1)
         self.LicID.set(AddHyphens('CN' + RandomString(18, '123456789ABCDEFGHJKLMNPQRTVWXY')))
         current_row += 1
