@@ -22,13 +22,14 @@ else:
 BASE16 = '0123456789ABCDEF'
 BASE30 = '123456789ABCDEFGHJKLMNPQRTVWXY'
 
-g_version_list = ('9.X.X', '8.X.X', '7.X.X', '6.X.X', '5.X.X')
+g_version_list = ('10.X.X', '9.X.X', '8.X.X', '7.X.X', '6.X.X', '5.X.X')
 g_version_magics = {
     '5.X.X': [7, 123, 23, 87],
     '6.X.X': [23, 161, 47, 9],
     '7.X.X': [221, 13, 93, 27],
     '8.X.X': [179, 95, 45, 245],
-    '9.X.X': [123, 17, 42, 7]
+    '9.X.X': [123, 17, 42, 7], 
+    '10.X.X': [102, 99, 107, 117]
 }
 
 def RandomString(size=20, chars=string.ascii_uppercase + string.digits):
@@ -133,12 +134,12 @@ class Application(Frame):
         else: Frame.__init__(self, master)
         
         scn_w, scn_h = master.winfo_screenwidth(), master.winfo_screenheight()
-        win_w, win_h = 350, 180
+        win_w, win_h = 370, 180
         cen_x = (scn_w - win_w) / 2
         cen_y = (scn_h - win_h) / 2
         
         self.master = master
-        self.master.title('WingIDE Pro Genkey (5, 6, 7, 8, 9)')
+        self.master.title('WingIDE Pro Genkey (5, 6, 7, 8, 9, 10)')
         self.master.resizable(False, False) 
         self.master.geometry('%dx%d+%d+%d'%(win_w, win_h, cen_x, cen_y))
         self.create_widgets()
